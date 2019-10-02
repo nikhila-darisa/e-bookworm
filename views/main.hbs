@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href={{style}}>
+    <link rel="stylesheet" href="../layout.css">
+</head>
+
+<body>
+    <header class="fixed-top">
+        {{#unless loggedin}}
+        {{#unless adminname}}
+        <div class="header-content fixed-top">
+            <span id="login-icon"><i class="fa fa-sign-in"></i></span>
+            <span id="new-user"><i class="fa fa-lock" aria-hidden="true"></i></span>
+            <span id="login"><a href="../login" class="register">Login</a></span>
+            <span id="sign-up"><a href="../signUp" class="register">Sign Up</a></span>
+        </div>
+        {{/unless}}
+        {{/unless}}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+                aria-331832expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <img class="logo" src="../images/logo.png" alt="Bookworm">
+            <div class="nav-data collapse navbar-collapse" id="navbarText" style='margin-left:20px'>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    {{!-- <li class="nav-item">
+                        <a class="categories nav-link" href="/sell">Sell</b></a>
+                    </li> --}}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item bookpage" value="novels">Novels</a>
+                            <a class="dropdown-item bookpage" value="action">Action</a>
+                            <a class="dropdown-item bookpage" value="adventure">Adventure</a>
+                            <a class="dropdown-item bookpage" value="biography">Biography</a>
+                            <a class="dropdown-item bookpage" value="classics">Classics</a>
+                            {{!-- <a class="dropdown-item bookpage" value="crime-thriller">Crime and Thriller</a>
+                            <a class="dropdown-item bookpage" value="fantacy">Fantacy</a>
+                            <a class="dropdown-item bookpage" value="friction">Fiction</a>
+                            <a class="dropdown-item bookpage" value="educational">Educational Books</a>
+                            <a class="dropdown-item bookpage" value="children">Children Books</a> --}}
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    {{!-- <input class="form-control mr-sm-2 search" type="search" placeholder="Search" aria-label="Search">
+                    <a class="search-button"><i class="fa fa-search"></i></a> --}}
+                    {{!-- {{#if loggedin}} --}}
+                    <input id="username" class="d-none" value="{{username}}">
+                    <input id="userid" class="d-none" value="{{userid}}">
+                    {{#if loggedin}}
+                    <li class="nav-item">
+                    <li class="nav-item dropdown accountnav">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="usercontent">Hello, {{username}}</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item userorders" data-toggle="modal" data-target="#modalRegisterForm">
+                                Edit Profile
+                            </a>
+                            <!-- Modal -->
+                            <a href="/cart/usercart" class="dropdown-item usercart">Your Cart</a>
+                            <a href="/userorders" class="dropdown-item userorders">our Orders</a>
+                            <a class="dropdown-item logout">Logout</a>
+                        </div>
+                    </li>
+                    <a href="/cart/usercart">
+                        <div class="cart-btn">
+                            <span class="nav-icon">
+                                <i class="cart-data fa fa-cart-plus">
+                                </i>
+                                <sup class="cartname">Cart</sup>
+                            </span>
+                        </div>
+                        <div class="cart-items">
+                            <span id="counter">{{notification}}</span>
+                        </div>
+                    </a>
+                    {{!-- <a style="color:white" class="btn btn-primary logout">Logout</a> --}}
+                    </li>
+                    {{/if}}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    {{{body}}}
+    <footer>
+        <div class="data col-sm-12">
+            <div class="col-sm-3">
+                <h3 id="footer-heading"></h3>
+                {{!-- <img class="logo" src="images/logo.png" alt="Bookworm" /> --}}
+                <ul style="list-style-type: none;">
+                    <li>
+                        <h3 style="font-weight:bold;color:#ff8400">Make Money with Us</h3>
+                    </li>
+                    <li style="color:whitesmoke">Buy on BookWorm</li>
+                    <li style="color:whitesmoke">Advertise Your Products</li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h3 id="footer-heading">Useful Links</h3>
+                <a class="text privacy" style="color:white">Privacy</a>
+                <a class="text aboutpage" style="color:white">About Us</a>
+                <a class="text terms" style="color:white">Terms</a>
+                <a class="text contactpage" style="color:white">Contact Us</a>
+            </div>
+            <div class="footer-data col-sm-3">
+                <h3 id="footer-heading">Connect Us</h3>
+                <div class="social-media">
+                    <a href="#"><i class="fa fa-facebook circle"></i></a>
+                    <a href="#"><i class="fa fa-google-plus circle"></i></a>
+                    <a href="#"><i class="fa fa-twitter circle"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title w-100 font-weight-bold">Update details</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {{!-- {{#if userdetails}} --}}
+                    <p id="updatemessage"></p>
+                    <form id="updateinfo">
+                        <div class="modal-body mx-3" style="background-color: #2bbbad!important;text-align: left;">
+                            <div class="md-form mb-5">
+                                <label for="name">Your
+                                    name</label>
+                                <i class="fa fa-user" aria-hidden="true"></i></i><input type="text" id="username" name="name"
+                                    value="{{userdetails.name}}" name="name" class="form-control"/>
+                            </div>
+                            <div class="md-form mb-5">
+                                <label for="email">Your
+                                    email</label>
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <input type="email" value="{{userdetails.emailid}}" id="useremail" name="email" class="form-control"/>
+                            </div>
+
+                            <div class="md-form mb-4">
+                                <label for="password">Your
+                                    password</label>
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                                <input type="text" value="{{userdetails.password}}" id="userpassword" name="password"
+                                    class="form-control validate"/>
+                            </div>
+                            <div class="md-form mb-4">
+                                <label for="phonenumber">Your
+                                    phonenumber</label>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <input type="text" id="usernumber" value="{{userdetails.phonenumber}}" name="number"
+                                    class="form-control validate"/>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" id="updatedata">Update</button>
+                        </div>
+                    </form>
+                    {{!-- {{/if}} --}}
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="../layout.js"></script>
+    <script src={{script}}></script>
+</body>
+
+</html>

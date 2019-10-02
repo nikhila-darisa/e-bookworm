@@ -1,0 +1,99 @@
+/* card */
+.para{
+    font-size:16px;
+    font-weight: bold;
+    word-spacing:2px;
+    color:darkgoldenrod
+}
+.card-body {
+    padding: 6px;
+    height: 250px;
+}
+.card{
+    height:300px;
+    border-style:hidden;
+}
+.icon{
+    float:right;
+    margin-right:10px;
+    font-size:30px;
+    color:orange
+}
+.pic{
+    height: 300px;
+}
+.card:hover{
+    box-shadow: 0 6px 20px 3px rgba(23, 15, 15, 1);
+}
+.store{
+    width: 96px;
+    height: 35px;
+    background-color: #2bbbad;
+    color: black;
+    position: absolute;
+    right: 10px;
+}
+
+.center{
+    margin-top: 20px;
+    height:200px;
+    background-color:black
+}
+.money{
+    color: burlywood;
+}
+.policy{
+    padding-left: 80px;
+    padding-top: 26px;
+}
+.policy-data{
+    color:#ff8400;
+    font-weight: bold
+}
+.policy-heading{
+    color:brown;
+    font-weight: bold
+}
+/* customer support */
+.component{
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* margin-top: 20px; */
+    height:293px;
+    background-color: white;
+}
+.customer{
+    height: 70px;
+}
+.customer-data{
+    padding-left: 80px;
+    padding-top: 50px;
+}
+/*end customer support */
+
+/* .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .card-container:hover.overlay{
+    height: 100%;
+}
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+  } */
+ 
+  

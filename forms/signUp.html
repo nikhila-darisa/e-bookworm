@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sign in</title>
+    <link rel="stylesheet" href="./signUp.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Verdana">
+</head>
+
+<body>
+    <div class="signup">
+        <form name="myform" method="post" action="/signup" onsubmit="return validateform()">
+            <h2 class="heading" style="color:#fff">Sign Up</h2>
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="text" name="username" placeholder="username" required />
+            <input type="email" name="emailid" placeholder="Email id" required />
+            <input type="password" name="password" placeholder="password" required />
+            <input type="password" name="confirmpassword" placeholder="confrom password" />
+            <input type="number" name="phonenumber" placeholder="Phone number" /><br><br>
+            <input class="heading" type="submit" value="signup"><br><br>
+        </form>
+    </div>
+</body>
+<script>
+    function validateform() {
+        var name = document.myform.name.value;
+        var password = document.myform.password.value;
+        var confirmpassword = document.myform.confirmpassword.value;
+        if (name.length < 2) {
+            alert("name should be greater than 6 letters");
+            return false;
+        }
+        if(password!=confirmpassword){
+            alert("password and conform password should be same")
+            return false
+        }
+    }  
+</script>
+
+</html>

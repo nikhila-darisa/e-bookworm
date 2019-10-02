@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/{{style}}">
+    <link rel="stylesheet" href="../admin.css">
+</head>
+
+<body style="background-color:white">
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <img class="logo" src="../images/logo.png" alt="Bookworm">
+            <a href="/logout" class="btn btn logout">Logout</a>
+        </nav>
+    </header>
+    <div class="cont">
+        <div class="row col-sm-12">
+            <nav id="sidebar" style="width:180px;margin-top:50px;padding-top: 50px;">
+                <ul class="list-unstyled components">
+                    <li>
+                        <a class="yourprofile" data-toggle="modal" data-target="#yourprofile">Your Profile</a>
+                    </li>
+                    <li>
+                        <a href="/dashboard">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Categories</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a class="bookpage" value="novels">Novels</a>
+                            </li>
+                            <li>
+                                <a class="bookpage" value="action">Action</a>
+                            </li>
+                            <li>
+                                <a class="bookpage" value="adventure">Adventure</a>
+                            </li>
+                            <li>
+                                <a class="bookpage" value="biography">Biography</a>
+                            </li>
+                            <li>
+                                <a class="bookpage" value="classics">Classics</a>
+                            </li>
+                            {{!-- <li>
+                                <a class="bookpage" value="crime-thriller">Crime and Thriller</a>
+                            </li>
+                            <li>
+                                <a class="bookpage" value="fantacy">Fantacy</a>
+                            </li>
+                            <li>
+                                <a class="bookpage" value="fiction">Fiction</a>
+                            </li>
+                            <li>
+                                <a class="bookpage" value="educational">Educational Books</a>
+                            </li>
+                            <li>
+                                <a class="bookpage" value="children">Children Books</a> --}}
+                            </li>
+                        </ul>
+                    </li>
+                    {{!-- <li>
+                        <a href="/adminusers">AdminUsers</a>
+                    </li> --}}
+                    <li>
+                        <a href="/query">UserQueries</a>
+                    </li>
+                    <li>
+                        <a href="/orders">orders</a>
+                    </li>
+                </ul>
+            </nav>
+            <div style="margin-left:210px" class="col-sm-10">
+                {{{body}}}
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="modal fade" id="yourprofile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title w-100 font-weight-bold">Update details</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {{!-- {{#if userdetails}} --}}
+                    <p id="updatemessage"></p>
+                    <form id="updateinfo">
+                        <div class="modal-body mx-3" style="background-color: #2bbbad!important;text-align: left;">
+                            <div class="md-form mb-5">
+                                <label for="name">user
+                                    name</label>
+                                <i class="fa fa-user" aria-hidden="true"></i></i><input type="text" id="username" name="name"
+                                    value="{{adminDetails.username}}" name="name" class="form-control" />
+                            </div>
+                            <div class="md-form mb-5">
+                                <label for="email">Your
+                                    email</label>
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <input type="email" value="{{adminDetails.emailid}}" id="useremail" name="email" class="form-control" />
+                            </div>
+
+                            <div class="md-form mb-4">
+                                <label for="password">Your
+                                    password</label>
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                                <input type="text" value="{{adminDetails.password}}" id="userpassword" name="password"
+                                    class="form-control validate" />
+                            </div>
+                            <div class="md-form mb-4">
+                                <label for="phonenumber">Your
+                                    phonenumber</label>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <input type="text" id="usernumber" value="{{adminDetails.phonenumber}}" name="number"
+                                    class="form-control validate" />
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" id="updatedata">Update</button>
+                        </div>
+                    </form>
+                    {{!-- {{/if}} --}}
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="../admin.js"></script>
+    <script src='{{script}}'></script>
+</body>
+
+</html>

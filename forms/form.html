@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Book upload</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="/details" enctype="multipart/form-data">
+            <div class="form-data col-sm-6">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" name="name" id="title" placeholder="Title of book">
+                </div>
+                <div class="form-group">
+                    <label for="Author">Author</label>
+                    <input type="text" class="form-control" name="author" id="author" placeholder="Author name">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="categoryoptions" name="category" class="form-control">
+                        <option selected>Choose</option>
+                        <option value=novels>Novel</option>
+                        <option value=action>Action</option>
+                        <option value=adventure>Adventure</option>
+                        <option value=biography>Biography</option>
+                        <option value=classics>Classics</option>
+                        <option value=crime-thriller>Crime and Thriller</option>
+                        <option value=fantacy>Fantacy</option>
+                        <option value=friction>friction</option>
+                        <option value=educational>Education Book</option>
+                        <option value=children>Children Books</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Price">Price</label>
+                    <input type="text" class="form-control" name="price" id="inputAddress2" placeholder="Enter Price">
+                </div>
+                <div class="form-group">
+                    <label for="number">ISBN</label>
+                    <input type="text" class="form-control" name="ISBN" id="inputAddress2" placeholder="Enter ISBN number">
+                </div>
+                <div class="form-group">
+                    <label for="number">Pages Count</label>
+                    <input type="text" class="form-control" name="count" id="inputAddress2" placeholder="Number of Pages">
+                </div>
+                <div class="form-group">
+                    <label for="number">Variation</label>
+                    <select id="inputState" name="Variation" class="form-control">
+                        <option selected>Choose</option>
+                        <option value=new>New</option>
+                        <option value=used>Used</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="upload">Upload Image</label><br>
+                    <input type="file" name="picture" placeholder="Upload Image">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

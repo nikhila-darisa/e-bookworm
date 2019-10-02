@@ -1,0 +1,170 @@
+<div style="padding:80px 10px 0px 10px">
+    <h4>Hello, {{adminname}}</h4>
+    <hr>
+    <p id="successmessage"></p>
+    <button class="btn btn-primary addbook" data-toggle="modal" data-target="#modalRegisterForm">Add Book</button>
+    <div class="result">
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col" width="15%">Name</th>
+                    <th scope="col">Book Image</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">ISBN</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            {{#each data}}
+            <tbody class="thead-light">
+                <td scope="col">{{this.name}}</td>
+                <td scope="col"><img style="width:100px;height:100px" src="{{this.imagepath}}" alt="product"></td>
+                <td scope="col">{{this.author}}</td>
+                <td scope="col">100</td>
+                <td scope="col">{{this.ISBN}}</td>
+                <td scope="col"><a class="btn edit"value="{{this._id}}"href="/getdetails/{{this._id}}"><i class="fa fa-pencil-square-o" aria-hidden="true" style="color:black;font-weight:bold;"></i></a> &nbsp;<button class="btn btn-danger deletebook" value="{{this._id}}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+            </tbody>
+            {{/each}}
+        </table>
+    </div>
+</div>
+{{!-- book details add form --}}
+ {{!-- {{#if bookdetails}} --}}
+{{!-- <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title w-100 font-weight-bold">Add details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <p id="updatemessage"></p>
+            <form>
+                <div class="modal-body mx-3" style="background-color: #2bbbad!important;text-align: left;">
+                    <div class="md-form mb-5">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" value="{{bookdetails.name}}"name="name" id="title" placeholder="Title of book"
+                            required>
+                    </div>
+                    <div class="md-form mb-5">
+                        <label for="Author">Author</label>
+                        <input type="text" class="form-control" name="author" id="author" placeholder="Author name"
+                            required>
+                    </div>
+
+                    <div class="md-form mb-4">
+                        <label for="category">Category</label>
+                        <select id="categoryoptions" name="category" id="category" class="form-control" required>
+                            <option selected>Choose</option>
+                            <option value=novels>Novel</option>
+                            <option value=action>Action</option>
+                            <option value=adventure>Adventure</option>
+                            <option value=biography>Biography</option>
+                            <option value=classics>Classics</option>
+                            <option value=crime-thriller>Crime and Thriller</option>
+                            <option value=fantacy>Fantacy</option>
+                            <option value=friction>friction</option>
+                            <option value=educational>Education Book</option>
+                            <option value=children>Children Books</option>
+                        </select>
+                    </div>
+                    <div class="md-form mb-4">
+                        <label for="Price">Price</label>
+                        <input type="text" class="form-control price" name="price" placeholder="Enter Price"
+                            required>
+                    </div>
+                    <div class="md-form mb-4">
+                        <label for="number">ISBN</label>
+                        <input type="text" class="form-control booknumber" name="ISBN" placeholder="Enter ISBN number"
+                            required>
+                    </div>
+                    <div class="md-form mb-4">
+                        <label for="number">Pages Count</label>
+                        <input type="text" class="form-control pages" name="count" placeholder="Number of Pages"
+                            required>
+                    </div>
+                    <div class="md-form mb-4">
+                        <label for="upload">Upload Image</label><br>
+                        <input type="file"  class="form-control pages" name="picture" placeholder="Upload Image"  required>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" id="addbook">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> --}}
+ {{!-- {{/if}} --}}
+ {{!-- end book details end form --}}
+ {{!-- update book details form --}}
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title w-100 font-weight-bold">Add details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <p id="updatemessage"></p>
+            <form enctype="multipart/form-data" method="post" action='/addbook'>
+                <div class="modal-body mx-3" style="background-color: #2bbbad!important;text-align: left;">
+                    <div class="md-form mb-5">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" name="name" id="addtitle" placeholder="Title of book"
+                            required>
+                    </div>
+                    <div class="md-form mb-5">
+                        <label for="Author">Author</label>
+                        <input type="text" class="form-control" name="author" id="addauthor" placeholder="Author name"
+                            required>
+                    </div>
+
+                    <div class="md-form mb-4">
+                        <label for="category">Category</label>
+                        <select id="categoryoptions" name="category" id="addcategory" class="form-control" required>
+                            <option selected>Choose</option>
+                            <option value=novels>Novel</option>
+                            <option value=action>Action</option>
+                            <option value=adventure>Adventure</option>
+                            <option value=biography>Biography</option>
+                            <option value=classics>Classics</option>
+                            {{!-- <option value=crime-thriller>Crime and Thriller</option>
+                            <option value=fantacy>Fantacy</option>
+                            <option value=friction>friction</option>
+                            <option value=educational>Education Book</option>
+                            <option value=children>Children Books</option> --}}
+                        </select>
+                    </div>
+                    <div class="md-form mb-4">
+                        <label for="Price">Price</label>
+                        <input type="text" class="form-control" name="price" id="addprice" placeholder="Enter Price"
+                            required>
+                    </div>
+                    <div class="md-form mb-4">
+                        <label for="number">ISBN</label>
+                        <input type="text" class="form-control" name="ISBN" id="addbooknumber" placeholder="Enter ISBN number"
+                            required>
+                    </div>
+                    <div class="md-form mb-4">
+                        <label for="number">Pages Count</label>
+                        <input type="text" class="form-control" name="count" id="addpages" placeholder="Number of Pages"
+                            required>
+                    </div>
+                    <div class="md-form mb-4">
+                        <label for="upload">Upload Image</label><br>
+                        <input type="file" name="picture" placeholder="Upload Image" id="newpic" required>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" id="addnewbook">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{!-- End update book --}}

@@ -1,0 +1,15 @@
+<div style="padding:150px 10px 0px 10px">
+    <div class="row col-sm-12">
+        {{#each result}}
+        <div class="col-sm-4">
+            <div class="card text-white bg-dark mb-3" style="max-width: 24rem;">
+                <div class="card-body" style="list-style: none">
+                    <li>Name:{{this.name}}</li>
+                    <li>Email:{{this.email}}</li>
+                    <li>Query:{{this.query}}</li>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

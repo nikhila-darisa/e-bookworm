@@ -1,0 +1,33 @@
+<div class="container" style="margin-bottom:20px;margin-top:80px;">
+    <form id='buyproduct'>
+        <div class="form-data col-sm-6">
+            <h3 style="font-weight:bold;color:black">Please update the details.</h3>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" value="{{userdetails.name}}"name="name" id="name" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile number</label>
+                <input type="number" class="form-control"value="{{userdetails.phonenumber}}"name="mobilenumber" id="number" placeholder="Mobile number"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="category">Pincode</label>
+                <input type="text" class="form-control"value="{{address.[1].pincode}}" name="pincode" id="pincode" placeholder="pincode" required>
+            </div>
+            <div class="form-group">
+                <label for="Price">Landmark</label>
+                <input type="text" class="form-control" value="{{address.[1].landmark}}"name="area" id="landmark" placeholder="Enter landmark" required>
+            </div>
+            <div class="form-group">
+                <label for="town">Town/city</label>
+                <input type="text" class="form-control"value="{{address.[1].town}}" name="ISBN" id="town" placeholder="Enter town" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" class="form-control" value="{{address.[1].state}}"name="count" id="state" placeholder="Enter state" required>
+            </div>
+            <button class="btn btn-primary">Deliver to this Address</button>
+        </div>
+    </form>
+</div>

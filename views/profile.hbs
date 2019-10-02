@@ -1,0 +1,67 @@
+<div class="container" style="margin-bottom:20px;margin-top:100px;">
+    {{#each hh}}
+    <form method="POST" action="/sell">
+        {{!-- <div class="form-data col-sm-6">
+            <div class="form-group">
+                <label for="title">Name</label>
+                <input type="text" class="form-control" name="name" value="{{this.name}}" id="title" placeholder="Name"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" value="{{this.emailid}}" id="title" placeholder="Emailid"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="Author">phonenumber</label>
+                <input type="text" class="form-control" name="author" value="{{this.phonenumber}}" id="author"
+                    placeholder="Author name" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sell</button>
+        </div> --}}
+        <div class="text-center">
+            <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Launch
+                Modal Register Form</a>
+        </div>
+        <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Update details</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3" style="background-color: #2bbbad!important;">
+                        <div class="md-form mb-5">
+                            <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
+                            <i class="fa fa-user" aria-hidden="true"></i></i><input type="text" id="orangeForm-name" value="{{this.name}}"
+                                class="form-control validate">
+                        </div>
+                        <div class="md-form mb-5">
+                            <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <input type="email" id="orangeForm-email" value="{{this.emailid}}" class="form-control validate">
+                        </div>
+
+                        <div class="md-form mb-4">
+                            <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+                            <i class="fa fa-key" aria-hidden="true"></i>
+                            <input type="text" value="{{this.password}}"class="form-control validate">
+                        </div>
+                        <div class="md-form mb-4">
+                            <label data-error="wrong" data-success="right" for="orangeForm-pass">Your phonenumber</label>
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <input type="text" id="orangeForm-pass"value="{{this.phonenumber}}"class="form-control validate">
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    {{/each}}
+</div>

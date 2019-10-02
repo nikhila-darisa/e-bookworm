@@ -1,0 +1,31 @@
+/* card */
+.para{
+    font-size:16px;
+    font-weight: bold;
+    word-spacing:2px;
+    color:darkgoldenrod
+}
+.card-body {
+    padding: 6px;
+    height: 250px;
+}
+.card:hover{
+    box-shadow: 0 6px 20px 3px rgba(23, 15, 15, 1);
+}
+.store{
+    width: 110px;
+    height: 40px;
+    background-color: #2bbbad;
+    color: black;
+    position: absolute;
+    right: 10px;
+}
+.book-name{
+    font-size: 16px;
+    font-weight: bold!important;
+}
+.details{
+    color:#337ab7!important;
+    text-decoration: none!important; 
+}
+/* end card */

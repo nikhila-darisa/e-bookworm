@@ -1,0 +1,35 @@
+<div class="container" style="margin-bottom:50px;margin-top:150px;">
+    {{#each ordersData}}
+    <div class="row"style="width:80%;background-color:white;margin-left:120px">
+        <div class="col-md-8 col-sm-12">
+            <table id="cart-content" class="table" cellspacing="0"style="margin-left:120px">
+                <thead class="thead">
+                    <tr>
+                        <th scope="col" style="width:30%"></th>
+                        <th scope="col" style="width:30%">Name</th>
+                        <th scope="col" style="width:30%">Price</th>
+                        <th scope="col" style="width:30%">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cart-content">
+                        <td class="image"><img style="width:100px;height:100px" src="{{this.imagepath}}" alt="product"></td>
+                        <td class="name">{{this.name}}</td>
+                        <td class="price">{{this.price}}</td>
+                        <td class="quantity">
+                            {{quantity}}
+                        </td>
+                        <td> </td>
+                        <td class="remove"><button class="btn btn-danger deleteorderproduct deleterefresh" value="{{this._id}}">Cancel</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{/each}}
+    <div style="margin-bottom:60px">
+        {{!-- {{ordersData}} --}}
+        <span class="total-amount" style="font-weight:bold;position:absolute;right: 30%;">Subtotal: <span style="color:brown;font-size:18px"><span
+                    style="font-size:14px">&#8377;</span>{{orderTotal}}</span>&nbsp;</span>
+    </div>
+</div>

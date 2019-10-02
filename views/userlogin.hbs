@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sign in</title>
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Verdana">
+</head>
+
+<body>
+    <div class="signin">
+        {{#if errormsg}}
+        <div class="alert alert-warning" role="alert">
+            {{errormsg}}
+        </div>
+        {{/if}}
+        <h2 style="color:white">Login In</h2>
+        <form action="/auth" method="POST">
+            <div class="form-group">
+                <input type="username" name="username" class="form-control" placeholder="username" />
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="password" /><br>
+                <nr></nr>
+            </div>
+            <input type="submit" value="login" class="btn btn-primary loginbutton" /><br><br>
+
+
+            <div id="container">
+                {{!-- <a href="/forgotpassword" style="margin-right:0%; font-size:13px;font-family:Verdana, Geneva, Tahoma, sans-serif">Forgot
+                    password</a> --}}
+            </div><br><br>
+            Dont have an account?<a href="/signup">&nbsp;Sign up</a>
+        </form>
+    </div>
+
+</body>
+
+</html>

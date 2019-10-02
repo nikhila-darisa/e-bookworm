@@ -1,0 +1,18 @@
+<div class="book-content" style="padding: 105px 170px 20px 170px;">
+    <div class="row">
+        {{#each data}}
+       <div class="col-sm-3">
+            <div class="card" style="width:230px;height:345px">
+                <img style="width:228px;height:230px" src="{{this.imagepath}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="book-name">{{this.name}}</h6>
+                    <span>
+                        <p class="para"><span style="color:grey">price: </span>&#8377;{{this.price}}<br>
+                            <button class="cartbtn btn store"value="{{this._id}}">Add to Cart</button><a class="details" href="/details/{{this._id}}">Details</a></p>
+                    </span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

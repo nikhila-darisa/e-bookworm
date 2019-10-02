@@ -1,0 +1,14 @@
+.carddata{
+    width:300px;
+    height: 150px
+}
+.card-text,.carddata{
+    font-weight: bold;
+    color:white;
+}
+.card-title:hover{
+    color: black;
+    transform: scale(1.2); 
+    margin-left: 30px
+
+}

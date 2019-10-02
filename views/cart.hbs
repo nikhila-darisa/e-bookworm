@@ -1,0 +1,43 @@
+<input id='username' class='d-none' value='{{username}}'>
+{{!-- style="padding: 20px 170px 200px 170px;" --}}
+<div class="container" style="padding-top: 120px; padding-bottom: 60px">
+    {{#each data}}
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            <table id="cart-content" class="table" cellspacing="0">
+                <thead class="thead">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cart-content">
+                        <td class="image"><img style="width:180px;height:180px" src="{{this.imagepath}}" alt="product"></td>
+                        <td class="name">{{this.name}}</td>
+                        <td class="price">{{this.price}}</td>
+                        <td class="quantity">
+                            <select book_qua="{{this._id}}" class="Bookquantity">
+                                <option>{{quantity}}</option>
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                            </select>
+                        </td>
+                        <td> </td>
+                        <td class="remove"><button class="btn btn-danger deleteproduct deleterefresh" value="{{this._id}}">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{/each}}
+    <div style="margin-bottom:60px">
+    <span class="total-amount" style="font-weight:bold;position:absolute;right: 38%;">Subtotal: <span style="color:brown;font-size:18px"><span
+                style="font-size:14px">&#8377;</span>{{Total}}</span>&nbsp;<a class="clear-cart btn btn-primary" href="/delivery">Place Order</a></span>
+    </div>
+</div>
+

@@ -1,0 +1,36 @@
+<div style="padding:80px 10px 0px 10px">
+    <h4>Hello, {{adminname}}</h4>
+    <hr>
+    <div class="result">
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col" style="width:60px">Address</th>
+                    <th scope="col">BOOK Name, Quantity</th>
+                </tr>
+            </thead>
+            {{#each userOrder}}
+            <tbody class="thead-light">
+                <td scope="col" style="width:10%">
+                    <pre>
+                   Name: {{this.address.name}}
+                   Mobilenumber: {{this.address.mobilenumber}}
+                   Pincode: {{this.address.pincode}}
+                   Landmark: {{this.address.landmark}}
+                   Town: {{this.address.town}}
+                   State: {{this.address.state}}
+                </pre>
+                </td>
+                <td scope="col">
+                    <ul class="list-group">
+                        {{#each this.orders}}
+                        <li class="list-group-item"><span style="font-weight:bold">Book Name</span>{{this.name}},&nbsp;
+                            <span style="font-weight:bold">Quantity:</span>{{this.quantity}}</li>
+                        {{/each}}
+                    </ul>
+                </td>
+            </tbody>
+            {{/each}}
+        </table>
+    </div>
+</div>
